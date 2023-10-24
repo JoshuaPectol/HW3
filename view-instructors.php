@@ -15,6 +15,9 @@ while($instructor = $instructors->fetch-assoc()){
     <td><?php echo $instructor['instructor_name'];?></td>
     <td><?php echo $instructor['office_number'];?></td>
   </tr>
+<?php
+}
+?>
 
     </tbody>
   </table>
