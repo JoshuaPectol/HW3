@@ -16,6 +16,7 @@ include "view-courses-newform.php";
       <th>Number</th>
       <th>Description</th>
       <th></th>
+      <th></th>
     </thead>
     <tbody>
 <?php
