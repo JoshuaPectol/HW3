@@ -55,4 +55,17 @@ function updateSection($iid, $cid, $sem, $room, $time, $sid) {
         throw $e;
     }
 }
+function deleteSection($sid) {
+    try {
+        $conn = get_db_connection();
+        $stmt = $conn->prepare("delete from section where section_id=?");
+        $stmt->bind_param("i", $sid);
+        $success = $stmt->execute();
+        $conn->close();
+        return $success;
+    } catch (Exception $e) {
+        $conn->close();
+        throw $e;
+    }
+}
 ?>
