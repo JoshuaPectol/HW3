@@ -19,6 +19,7 @@
             <label for="iid" class="form-label">Instructor Name</label>
 <?php
 $instructorList = selectInstructorsForInput();
+$selectedInstructor = 0;  
 include "view-instructor-input-list.php"
 ?>
           </div>
