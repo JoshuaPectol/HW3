@@ -27,4 +27,32 @@ function selectCoursesByInstructor($iid) {
         throw $e;
     }
 }
+
+function insertSection($iid, $cid, $sem, $room, $time) {
+    try {
+        $conn = get_db_connection();
+        $stmt = $conn->prepare("Insert Into 'section' ('instructor_id, 'course_id', 'semester', 'room', 'day_time') VALUES(?, ?, ?, ?, ?)");
+        $stmt->bind_param("iisssi", $iid, $cid, $sem, $room, $time, $sid);
+        $success = $stmt->execute();
+        $conn->close();
+        return $success;
+    } catch (Exception $e) {
+        $conn->close();
+        throw $e;
+    }
+}
+
+function updateSection($iid, $cid, $sem, $room, $time, $sid) {
+    try {
+        $conn = get_db_connection();
+        $stmt = $conn->prepare("update 'section' set 'instructor_id = ?, 'course_id'= ?, 'semester'=?, 'room'=?, 'day_time'=?,");
+        $stmt->bind_param("iisssi", $iid, $cid, $sem, $room, $time, $sid);
+        $success = $stmt->execute();
+        $conn->close();
+        return $success;
+    } catch (Exception $e) {
+        $conn->close();
+        throw $e;
+    }
+}
 ?>
