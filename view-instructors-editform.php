@@ -7,7 +7,7 @@
 </button>
 
 <!-- Modal -->
-<div class="modal fade" id="editinstructorModal<?php echo $instructor['instructor_id']; ?>" tabindex="-1" aria-labelledby="editInstructorModalLabel<?php echo $instructor['instructor_id']; ?>" aria-hidden="true">
+<div class="modal fade" id="editInstructorModal<?php echo $instructor['instructor_id']; ?>" tabindex="-1" aria-labelledby="editInstructorModalLabel<?php echo $instructor['instructor_id']; ?>" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
