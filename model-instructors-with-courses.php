@@ -31,7 +31,7 @@ function selectCoursesByInstructor($iid) {
 function insertSection($iid, $cid, $sem, $room, $time) {
     try {
         $conn = get_db_connection();
-        $stmt = $conn->prepare("Insert Into 'section' ('instructor_id, 'course_id', 'semester', 'room', 'day_time')");
+        $stmt = $conn->prepare("Insert Into 'section' ('instructor_id, 'course_id', 'semester', 'room', 'day_time') VALUES(?, ?, ?, ?, ?)");
         $stmt->bind_param("iisssi", $iid, $cid, $sem, $room, $time, $sid);
         $success = $stmt->execute();
         $conn->close();
