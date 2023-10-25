@@ -18,7 +18,7 @@
           <div class="mb-3">
             <label for="iid" class="form-label">Instructor Name</label>
 <?php
-$instructorList = selectInstructorForInput();
+$instructorList = selectInstructorsForInput();
 include "view-instructor-input-list.php"
 ?>
           </div>
