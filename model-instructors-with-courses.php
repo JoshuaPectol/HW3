@@ -27,6 +27,33 @@ function selectCoursesByInstructor($iid) {
         throw $e;
     }
 }
+function selectInstructorsForInput() {
+    try {
+        $conn = get_db_connection();
+        $stmt = $conn->prepare("SELECT instructor_id, instructor_name FROM `instructor` order by instructor_name");
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $conn->close();
+        return $result;
+    } catch (Exception $e) {
+        $conn->close();
+        throw $e;
+    }
+}
+
+function selectCoursesForInput() {
+    try {
+        $conn = get_db_connection();
+        $stmt = $conn->prepare("SELECT course_id, course_number FROM `course` order by course_number");
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $conn->close();
+        return $result;
+    } catch (Exception $e) {
+        $conn->close();
+        throw $e;
+    }
+}
 
 function insertSection($iid, $cid, $sem, $room, $time) {
     try {
