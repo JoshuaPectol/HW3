@@ -27,7 +27,11 @@ while($course = $courses->fetch_assoc()){
     <td><?php echo $course['course_id'];?></td>
     <td><?php echo $course['course_number'];?></td>
     <td><?php echo $course['course_description'];?></td>
-    <td></td>
+    <td>
+  <?php
+  include "view-courses-editform.php";
+  ?>
+    </td>
     <td>
       <form method="post" action="">
         <input type="hidden" name="cid" value="<?php echo $course['course_id'];?>">
