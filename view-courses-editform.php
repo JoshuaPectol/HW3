@@ -7,7 +7,7 @@
 </button>
 
 <!-- Modal -->
-<div class="modal fade" id="editCourseModal" tabindex="-1" aria-labelledby="editCourseModalLabel<?php echo $course['course_id']; ?>" aria-hidden="true">
+<div class="modal fade" id="editCourseModal<?php echo $course['course_id']; ?>" tabindex="-1" aria-labelledby="editCourseModalLabel<?php echo $course['course_id']; ?>" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
